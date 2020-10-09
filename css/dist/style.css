@@ -1,0 +1,352 @@
+/* Variables
+=====================================*/
+/* Layouts
+=====================================*/
+section, footer, .content-area, main {
+  padding: 16px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 960px) {
+  section, footer, .content-area, main {
+    padding: 32px;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 80vw;
+  width: 100%;
+}
+
+.button {
+  display: inline-block;
+  color: #000000;
+  padding: 5px 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2em;
+  border: 1px solid #000000;
+}
+
+.button-white {
+  background-color: #fff;
+}
+
+/* Main/Resets
+=====================================*/
+html {
+  font-size: 60%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0 auto;
+  background-color: #f2f3f5;
+  font-size: 1.6em;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+  line-height: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1em;
+  font-family: "Eczar", serif;
+  line-height: 1.5em;
+}
+
+a:link {
+  color: #000000;
+  text-decoration: underline #e65100;
+}
+a:link:hover {
+  color: #e65100;
+}
+
+a:visited {
+  color: #000000;
+}
+
+a:active {
+  color: #009688;
+}
+
+.site-content {
+  display: grid;
+  margin: 20vh auto;
+}
+@media screen and (min-width: 960px) {
+  .site-content {
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+  }
+}
+.site-content__sidebar {
+  border-top: 2em solid #009688;
+  margin-top: 2em;
+}
+.site-content__sidebar #secondary {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.site-content__sidebar .widget {
+  margin: 1em;
+}
+
+.page-numbers {
+  display: block;
+  text-align: center;
+  list-style: none;
+}
+.page-numbers li {
+  display: inline-block;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 80vw;
+  width: 100%;
+}
+
+input {
+  border: 1px solid #000000;
+  box-shadow: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.screen-reader-text {
+  display: none;
+}
+
+/* Header
+=====================================*/
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+}
+.site-header__menu {
+  background-color: #fff;
+}
+.site-header__menu a {
+  color: #000000;
+  text-decoration: none;
+}
+.site-header__menu .menu,
+.site-header__menu .submenu {
+  list-style: none;
+}
+.site-header__menu li a {
+  display: block;
+  padding: 15px 0px;
+}
+.site-header__menu .logo img {
+  max-height: 50px;
+  width: auto;
+}
+.site-header__menu .toggle {
+  max-height: 2.5em;
+  font-size: 1em;
+  margin-bottom: 0.25em;
+}
+.site-header__menu .active .menu-item, .site-header__menu .active .icon {
+  display: block;
+}
+.site-header__menu .menu-item {
+  width: 100%;
+  display: none;
+}
+.site-header__menu .icon {
+  width: 90%;
+  display: block;
+  margin-bottom: 0.25em;
+}
+.site-header__menu .submenu {
+  display: none;
+}
+.site-header__menu .submenu-active .submenu {
+  display: block;
+}
+@media screen and (min-width: 512px) and (max-width: 960px) {
+  .site-header__menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .site-header__menu .toggle {
+    order: 1;
+  }
+  .site-header__menu .icon {
+    display: block;
+    margin: 0.5em;
+  }
+}
+@media screen and (min-width: 960px) {
+  .site-header__menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .site-header__menu .toggle {
+    display: none;
+  }
+  .site-header__menu .menu {
+    display: flex;
+    justify-content: space-around;
+  }
+  .site-header__menu .menu-item {
+    width: auto;
+    display: inline-block;
+    margin: 1em;
+  }
+  .site-header__menu .icon {
+    order: 2;
+  }
+}
+
+/* Hero
+=====================================*/
+.hero {
+  position: relative;
+}
+.hero::after {
+  content: " ";
+  background-image: url("http://localhost/wordpress/wp-content/uploads/2020/10/gothik-steampunk.jpg");
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+.hero__wrapper {
+  height: 50vh;
+  text-decoration: none;
+  display: grid;
+  align-content: end;
+}
+.hero__heading {
+  text-align: center;
+}
+.hero h1 {
+  color: #000000;
+}
+.hero span {
+  display: block;
+  letter-spacing: 0.2rem;
+  margin-bottom: 20px;
+  color: #000000;
+}
+@media screen and (min-width: 960px) {
+  .hero__wrapper {
+    height: 70vh;
+    text-decoration: none;
+    display: grid;
+    align-content: end;
+  }
+}
+
+/* Promo
+=====================================*/
+.standard-promo {
+  display: grid;
+}
+@media screen and (min-width: 960px) {
+  .standard-promo {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 450px;
+    gap: 40px;
+  }
+  .standard-promo .promo-card {
+    display: grid;
+    align-content: center;
+  }
+  .standard-promo .promo-card__heading, .standard-promo .promo-card__body {
+    max-width: 300px;
+    text-align: center;
+  }
+  .standard-promo .promo-card__heading__heading, .standard-promo .promo-card__body__heading {
+    margin: 0;
+  }
+  .standard-promo .promo-card__heading__body, .standard-promo .promo-card__body__body {
+    line-height: 3em;
+  }
+}
+
+.promo-card {
+  text-decoration: none;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.promo-card__heading {
+  max-width: 80%;
+  margin: 20px auto;
+}
+.promo-card__body {
+  max-width: 80%;
+  margin: 20px auto;
+}
+.promo-card--gray {
+  background-color: #f2f3f5;
+}
+
+/* Shop Section
+=====================================*/
+.shop-section__heading, .shop-section__body {
+  text-align: center;
+}
+
+/* Signup
+=====================================*/
+.signup {
+  display: grid;
+  align-items: center;
+  gap: 20px;
+}
+.signup__heading {
+  font-size: 1em;
+  margin: 0;
+  font-style: italic;
+}
+@media screen and (min-width: 960px) {
+  .signup {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.form__email {
+  width: 100%;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000000;
+}
+.form__submit {
+  width: 100%;
+}
+
+/* Footer
+=====================================*/
+.footer {
+  display: grid;
+  background-color: #009688;
+}
+
+.woocommerce span.onsale {
+  background-color: #e65100;
+}
+
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+  color: #009688;
+}
+
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+  background-color: #000000;
+}

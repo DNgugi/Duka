@@ -1,0 +1,422 @@
+@import "_breakpoints.scss";
+
+/* Variables
+=====================================*/
+$primary-color: #000000;
+$secondary-color: #fff;
+$highlight-color: #009688;
+$highlight-color-b: #e65100;
+$heading-font: 'Eczar', serif;
+$body-font: 'Ubuntu', sans-serif;
+$mobile-padding: 16px;
+$desktop-padding: 32px;
+
+/* Layouts
+=====================================*/
+section, footer, .content-area, main{
+    padding: $mobile-padding;
+    margin: 0 auto;
+    @include desktop{
+        padding: $desktop-padding;
+    }
+}
+
+.wrapper{
+    margin: 0 auto;
+    max-width: 80vw;
+    width: 100%;
+   
+}
+
+.button{
+    display: inline-block;
+    color: $primary-color;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    border: 1px solid $primary-color;
+}
+
+.button-white{
+    background-color: $secondary-color;
+}
+
+
+/* Main/Resets
+=====================================*/
+
+html{
+    font-size: 60%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    
+}
+
+body{
+    margin: 0 auto;
+    background-color: #f2f3f5;
+    font-size: 1.6em;
+    font-family: $body-font;
+    font-weight: 400;
+    font-style: normal;
+    color: $primary-color;
+    line-height: 1.2em;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 1em;
+    font-family: $heading-font;
+    line-height: 1.5em;
+}
+
+
+a:link{
+    color: $primary-color;
+    text-decoration: underline $highlight-color-b;
+    
+    &:hover{
+        color: $highlight-color-b;
+    }
+}
+
+a:visited {color: $primary-color}
+a:active{color:$highlight-color}
+
+.site-content{
+    display: grid;
+    margin: 20vh auto;
+    @include desktop{
+        grid-template-columns: 2fr 1fr;
+        gap: $desktop-padding;
+    }
+    
+
+    
+    &__sidebar{
+        border-top: 2em solid $highlight-color;
+        margin-top: 2em;
+        #secondary{
+            display: flex;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            
+        }
+
+        .widget{
+            margin: 1em;
+        }
+    }
+
+}
+.page-numbers{
+
+    display: block;
+    text-align: center;
+    list-style: none;
+        li{
+            display: inline-block;
+        }
+    }
+
+.wrapper{
+    margin: 0 auto;
+    max-width: 80vw;
+    width: 100%;
+   
+}
+
+
+
+input{
+    border: 1px solid $primary-color;
+    box-shadow: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.screen-reader-text{
+    display: none;
+}
+
+/* Header
+=====================================*/
+.site-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width:100%;
+    &__menu{
+
+        background-color: $secondary-color;
+
+        a {
+            color: $primary-color;
+            text-decoration: none;
+          }
+        .menu,
+        .submenu {
+            list-style: none;
+        }
+    
+        li a {
+            display: block;
+            padding: 15px 0px;
+        }
+
+        .logo img{
+            max-height: 50px;
+            width: auto;
+        }
+        
+        .toggle {
+            max-height: 2.5em;
+            font-size: 1em;
+            margin-bottom: .25em;
+          
+        }
+        
+        .active .menu-item, .active .icon {
+            display: block;
+        }
+
+        .menu-item{
+            width: 100%;
+            display: none;
+        }
+        
+        .icon {
+            width: 90%;
+            display: block;
+            margin-bottom: .25em;
+        } 
+
+        .submenu {
+            display: none;
+        }
+        .submenu-active .submenu {
+            display: block;
+        }
+        
+    }
+
+    @include tab{
+        &__menu{
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            .toggle{
+                order: 1;
+            }
+
+            .icon {
+            
+                display: block;
+                margin: .5em;
+            } 
+
+        }
+    }
+    @include desktop{
+        &__menu{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+            
+            .toggle{
+                display: none;   
+            }
+           
+
+            .menu{
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .menu-item{
+                width: auto;
+                display: inline-block;
+                margin: 1em;
+            }
+
+            .icon{
+                order: 2;
+            }
+
+
+            
+
+            
+
+        }
+    }
+}
+
+
+
+/* Hero
+=====================================*/
+
+.hero{
+    position: relative; //So we can set pseudo background.
+
+    &::after{
+        content: " ";
+        background-image: url("http://localhost/wordpress/wp-content/uploads/2020/10/gothik-steampunk.jpg");
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50%;
+
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1; 
+    }
+
+    &__wrapper{
+        height: 50vh;
+        text-decoration: none;
+        display: grid;
+        align-content: end;
+    }
+
+    &__heading{
+        text-align: center;
+        
+    }
+
+    h1{
+        color: $primary-color;
+    }
+    span{
+        display: block;
+        letter-spacing: 0.2rem;
+        margin-bottom: 20px;
+        color: $primary-color;
+    }
+
+    @include desktop{
+        &__wrapper{
+            height: 70vh;
+            text-decoration: none;
+            display: grid;
+            align-content: end;
+        }
+
+    }
+    
+}
+
+/* Promo
+=====================================*/
+
+.standard-promo{
+    display: grid;
+    @include desktop{
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 450px;
+        gap: 40px;
+
+        .promo-card{
+            display: grid;
+            align-content: center;
+
+            &__heading, &__body{
+                max-width: 300px;
+                text-align: center;
+
+            &__heading{
+                margin: 0;
+            }
+
+            &__body{
+                line-height: 3em;
+            }
+
+
+            }
+        }
+    }
+}
+
+.promo-card{
+    text-decoration: none;
+    padding: $mobile-padding;
+    margin-bottom: 20px;
+
+    
+
+    &__heading{
+        max-width: 80%;
+        margin: 20px auto;
+    }
+    &__body{
+        max-width: 80%;
+        margin: 20px auto;
+    }
+
+    &--gray{background-color: #f2f3f5;}
+
+}
+
+/* Shop Section
+=====================================*/
+.shop-section{
+    &__heading,&__body{
+        text-align: center;
+    }
+}
+
+/* Signup
+=====================================*/
+.signup{
+    display: grid;
+    align-items: center;
+    gap: 20px;
+
+    &__heading{
+       font-size: 1em;
+        margin: 0;
+        font-style: italic;
+    }
+
+    @include desktop{
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.form{
+    &__email{
+        width: 100%;
+        margin-bottom: 20px;
+        border-bottom: 2px solid $primary-color;
+    }
+
+    &__submit{
+        width: 100%;
+    }
+
+
+}
+
+/* Footer
+=====================================*/
+.footer{
+    display: grid;
+    background-color: $highlight-color;
+
+}
+
+.woocommerce span.onsale {
+    background-color: $highlight-color-b;
+}
+
+.woocommerce div.product p.price, .woocommerce div.product span.price{
+    color: $highlight-color;
+}
+
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+    background-color: $primary-color;
+}
